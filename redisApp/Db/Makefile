@@ -19,4 +19,6 @@ DB += redis.db
 include $(TOP)/configure/RULES
 #----------------------------------------
 #  ADD RULES AFTER THIS LINE
-
+redis.db:
+	python genHashes.py
+	python gendb.py >redis.db
