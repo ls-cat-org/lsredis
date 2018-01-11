@@ -26,8 +26,6 @@ static long value_get_ioint_info( int dir, dbCommon* prec, IOSCANPVT* io) {
   return 0;
 }
 
-
-
 /** Send our value to redis
  **
  */
