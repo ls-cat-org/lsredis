@@ -1,4 +1,6 @@
-import redis
+# Copyright 2018 by Northwestern University
+# Author: Keith Brister
+#
 configList = {
     "stns.2" : [
         #
@@ -249,65 +251,5 @@ configList = {
         {                               "key": "saxs.3.set",       "ri": "bi",        "setter": "redis", "iscan": "Passive",  "dtyp": "VAL Source",   "znam": "Off", "onam": "On"},
         { "pv": "saxs:prefix4_RBV",     "key": "saxs.prefix4",     "ro": "stringout",                    "oscan": "I/O Intr", "dtyp": "Redis Source"},
         {                               "key": "saxs.prefix4",     "ri": "stringin",  "setter": "redis", "iscan": "Passive",  "dtyp": "VAL Source"},
-        
     ]
 }
-
-ndx    = "stns.2"
-for obj in configList[ndx]:
-    k = ndx+'.'+obj["key"]
-    
-    print 'HDEL %s DTYP OUT_RECORD INP ZNAM ONAM OUT_SCAN OUT_PV SETTER IN_RECORD OUT IN_PV OUT_DTYP IN_DTYP' % (k)
-
-for obj in configList[ndx]:
-    k = ndx+'.'+obj["key"]
-    
-    if obj.has_key( 'ro'):
-        print 'HSET %s OUT_DTYP "%s"' % ( k, obj["dtyp"])
-        print 'HSET %s OUT_RECORD %s' % ( k, obj["ro"])
-        if obj.has_key( 'out'):
-            print 'HSET %s OUT %s' % ( k, obj["out"])
-
-        if obj.has_key( 'prec'):
-            print 'HSET %s PREC %s' % ( k, obj["prec"])
-            
-        if obj.has_key( 'znam'):
-            print 'HSET %s ZNAM %s' %( k, obj["znam"])
-
-        if obj.has_key( 'onam'):
-            print 'HSET %s ONAM %s' %( k, obj["onam"])
-
-        print 'HSET %s OUT_SCAN "%s"' % ( k, obj["oscan"])
-
-        if obj.has_key( 'pv'):
-            print 'HSET %s OUT_PV %s' % ( k, obj["pv"])
-        else:
-            print 'HSET %s OUT_PV %s' % ( k, k.replace( '.', ':'))
-
-
-    if obj.has_key( 'ri'):
-        if obj.has_key( 'setter'):
-            print 'HSET %s SETTER %s' % ( k, obj["setter"])
-    
-        print 'HSET %s IN_DTYP "%s"' % ( k, obj["dtyp"])
-        print 'HSET %s IN_RECORD %s' % ( k, obj["ri"])
-        if obj.has_key( 'inp'):
-            print 'HSET %s INP %s' % ( k, obj["inp"])
-            
-        if obj.has_key( 'prec'):
-            print 'HSET %s PREC %s' % ( k, obj["prec"])
-
-        if obj.has_key( 'znam'):
-            print 'HSET %s ZNAM %s' %( k, obj["znam"])
-
-        if obj.has_key( 'onam'):
-            print 'HSET %s ONAM %s' %( k, obj["onam"])
-
-        print 'HSET %s IN_SCAN "%s"' % ( k, obj["iscan"])
-
-        if obj.has_key( 'pv'):
-            print 'HSET %s IN_PV %s' % ( k, obj["pv"])
-        else:
-            print 'HSET %s IN_PV %s' % ( k, obj["key"].replace( '.', ':'))
-
-    print 'HSETNX %s VALUE ""' % ( k)
