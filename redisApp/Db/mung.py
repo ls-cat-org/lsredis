@@ -25,7 +25,7 @@ configList = {
         { "inp": "21linux:mono:ChEnWrkng",       "key": "mono.changeEnergyRunning",    "setter": "redis", "iscan": "Passive", "dtyp": "CA Source", "ri": "bi", "znam": "Idle", "onam": "Working"},
         { "inp": "21linux:mono:CentrWrkng",      "key": "mono.centerRunning",          "setter": "redis", "iscan": "Passive", "dtyp": "CA Source", "ri": "bi", "znam": "Idle", "onam": "Working"},
         { "inp": "21linux:mono:UndoActive",      "key": "mono.undoActive",             "setter": "redis", "iscan": "Passive", "dtyp": "CA Source", "ri": "bi", "znam": "Undo Deactivated", "onam": "Undo Activated"},
-        { "inp": "21linux:mono:AllowedEnOffset", "key": "mono.allowedEnOffset",        "setter": "redis", "iscan": "Passive", "dtyp": "CA Source", "ri": "ai", "prec": 3},
+        { "inp": "21:D1:AllowedEnOffset", "key": "mono.allowedEnOffset",        "setter": "redis", "iscan": "Passive", "dtyp": "CA Source", "ri": "ai", "prec": 3},
         { "inp": "21linux:mono:FluoFilesWrttn",  "key": "fluoScan.filesWritten",       "setter": "redis", "iscan": "passive", "dtyp": "CA Source", "ri": "bi", "znam": "Idle", "onam": "Done"},
         { "inp": "21:D1:scan4.CPT",              "key": "fluoScan.currentPoint",       "setter": "redis", "iscan": "passive", "dtyp": "CA Source", "ri": "longin"},
         { "inp": "21:D1:scan4.NPTS",             "key": "fluoScan.nPoints",            "setter": "redis", "iscan": "passive", "dtyp": "CA Source", "ri": "longin"},
