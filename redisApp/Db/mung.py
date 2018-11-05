@@ -6,6 +6,16 @@ configList = {
         #
         # EPICS originated pvs
         #
+        { "inp": "OPS:message3",                 "key": "ops.fill_pattern",            "setter": "redis", "iscan": "Passive", "dtyp": "CA Source", "ri": "stringin"},
+        { "inp": "OPS:message4",                 "key": "ops.problem_line_1",          "setter": "redis", "iscan": "Passive", "dtyp": "CA Source", "ri": "stringin"},
+        { "inp": "OPS:message14",                "key": "ops.problem_line_2",          "setter": "redis", "iscan": "Passive", "dtyp": "CA Source", "ri": "stringin"},
+        { "inp": "OPS:message15",                "key": "ops.problem_line_3",          "setter": "redis", "iscan": "Passive", "dtyp": "CA Source", "ri": "stringin"},
+        { "inp": "OPS:message5",                 "key": "ops.last_trip_line_1",        "setter": "redis", "iscan": "Passive", "dtyp": "CA Source", "ri": "stringin"},
+        { "inp": "OPS:message16",                "key": "ops.last_trip_line_2",        "setter": "redis", "iscan": "Passive", "dtyp": "CA Source", "ri": "stringin"},
+        { "inp": "OPS:message6",                 "key": "ops.next_fill_line_1",        "setter": "redis", "iscan": "Passive", "dtyp": "CA Source", "ri": "stringin"},
+        { "inp": "OPS:message17",                "key": "ops.next_fill_line_2",        "setter": "redis", "iscan": "Passive", "dtyp": "CA Source", "ri": "stringin"},
+        { "inp": "OPS:message18",                "key": "ops.next_update",             "setter": "redis", "iscan": "Passive", "dtyp": "CA Source", "ri": "stringin"},
+        { "inp": "OPS:TimeOfDaySI",              "key": "ops.time_of_day",             "setter": "redis", "iscan": "Passive", "dtyp": "CA Source", "ri": "stringin"},
         { "inp": "21:D1:DAC1_5",                 "key": "vfm.position",                "setter": "redis", "iscan": "Passive", "dtyp": "CA Source", "ri": "ai", "prec": 3},
         { "inp": "21:D1:DAC1_6",                 "key": "hfm.position",                "setter": "redis", "iscan": "Passive", "dtyp": "CA Source", "ri": "ai", "prec": 3},
         { "inp": "21:D1:pmac20:acc65e:1:rb14",   "key": "detector.cover",              "setter": "redis", "iscan": "Passive", "dtyp": "CA Source", "ri": "bi", "znam": "Down", "onam": "Up"},
