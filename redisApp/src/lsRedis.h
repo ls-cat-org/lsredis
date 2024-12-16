@@ -1,3 +1,6 @@
+#ifndef LSCAT_LSREDIS_H
+#define LSCAT_LSREDIS_H
+
 #define _GNU_SOURCE
 #include <stdlib.h>
 #include <epicsExport.h>
@@ -117,7 +120,9 @@ typedef struct lsRedisHashDataStruct {
   redisValueState *rvs;	// our private data
 } lsRedisHashData;
 
-extern long value_init_record( dbCommon *prec, int inout);
-extern void lsRedisSendQuery( redisState *rs, char *qs);
+long value_init_record(dbCommon *prec, int inout);
+void lsRedisSendQuery(redisState *rs, char *qs);
 
-extern void setRedis( redisValueState *rvs, char *value);
+void setRedis(redisValueState *rvs, char *value);
+
+#endif // header guard
