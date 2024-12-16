@@ -1,7 +1,10 @@
 #ifndef LSCAT_LSREDIS_H
 #define LSCAT_LSREDIS_H
 
-#define _GNU_SOURCE
+#ifndef _GNU_SOURCE
+#  define _GNU_SOURCE
+#endif
+
 #include <stdlib.h>
 #include <epicsExport.h>
 #include <dbAccess.h>
